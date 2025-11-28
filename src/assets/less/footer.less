@@ -1,0 +1,36 @@
+.footer {
+    grid-area: footer;
+
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // column-gap: 8rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+        border-top: solid 1px @separation-color;
+        position: relative;
+        z-index: 2;
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: color .5s ease-in-out;
+            cursor: pointer;
+            border-radius: 2px;
+
+            &-icon {
+                font-size: 3rem;
+            }
+
+            &-title {
+                font-size: 1rem;
+            }
+
+            &:hover {
+                color: @separation-color;
+            }
+        }
+    }
+}

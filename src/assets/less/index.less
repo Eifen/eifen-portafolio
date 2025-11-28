@@ -1,0 +1,44 @@
+/*ROOT*/
+@font-family-h: 'Lato', sans-serif;
+@font-family-t: 'Poppins', sans-serif;
+@block-color: #343434;
+@block2-color: #5D5D5D;
+@block3-color: rgba(12, 9, 16, 1);
+@separation-color: #38040E;
+@text-color: #f7f0f0;
+@padding-container: 1rem;
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: min(1.5vmax, 1.8rem);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    font-family: @font-family-t;
+    background: @block-color;
+    color: @text-color;
+}
+
+.titles {
+    font-family: @font-family-h;
+    font-size: min(2.5vmax, 3rem);
+    line-height: 1.2rem;
+    font-weight: 700
+}
+
+
+
+/*IMPORTS*/
+@import './homepage.less';
+@import './header.less';
+@import './aside.less';
+@import './body.less';
+@import './footer.less';
+@import './info/aboutme.less';
