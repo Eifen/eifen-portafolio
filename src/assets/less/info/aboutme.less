@@ -13,29 +13,196 @@
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: min-content min-content min-content min-content 1fr min-content;
 
-    &-item {
-        grid-column: 1 / -1;
 
-        &-header {
-            background: wheat;
-            position: relative;
+    &-item-header {
+        .items();
+        position: relative;
 
-            & .item-header {
-                border-radius: 0px 0px 50% 50%;
-                height: 5vh;
-                padding: 2rem;
+        & .item-header {
+            &-info {
+                position: absolute;
+                left: 1rem;
+                top: 0rem;
+                padding: @padding-container;
+                width: 90%;
 
-                &-info {
-                    background: green;
-                    position: absolute;
-                    left: 2rem;
-                    top: 6vh;
-                    width: 90%;
+                /*Display*/
+                display: flex;
+                justify-content: baseline;
+                column-gap: .375rem;
 
-                    /*Display*/
-                    display: flex;
-                    column-gap: 1rem;
+                &-avatar {
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                    margin-top: 1rem;
+                    flex-shrink: 0;
+                    z-index: 2;
+
+                    &-image {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: inherit;
+                        margin-top: 1rem;
+                    }
                 }
+
+                &-message {
+                    background: @block2-color;
+                    position: absolute;
+                    top: 7rem;
+                    left: 90px;
+                    max-width: 300px;
+                    padding: .5rem @padding-container;
+                    border-radius: 1rem;
+                    font-size: 1.3rem;
+                    flex-shrink: 1;
+
+                    &-text {
+                        max-height: 40px;
+                        overflow: hidden;
+                    }
+
+                    &-pointUp {
+                        .point();
+                        width: 10px;
+                        height: 10px;
+                        top: -2rem;
+                        left: 0rem;
+                    }
+
+                    &-pointDown {
+                        .point();
+                        width: 13px;
+                        height: 10px;
+                        top: -.5rem;
+                        left: 1rem;
+
+                    }
+                }
+            }
+
+            &-icons {
+                position: absolute;
+                right: 2rem;
+                top: 1rem;
+                padding: .375rem;
+                z-index: 2;
+
+                /*Display*/
+                display: flex;
+                justify-content: flex-end;
+                gap: 1rem;
+
+                &-icon {
+                    background: @block2-color;
+                    width: 20px;
+                    height: 20px;
+                    padding: .6rem;
+                    border-radius: 50%;
+                    border: 2px solid @block2-color;
+                    /*display*/
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: transform .5s ease-in, background .5s ease-out, border .5s ease-out;
+
+                    &:hover {
+                        background: @separation-color;
+                        border: 2px solid @separation-color;
+                        transform: scale(1.1);
+                        cursor: pointer;
+                    }
+
+                    & a {
+                        width: inherit;
+                        height: inherit;
+                    }
+
+                    & img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            &-image {
+                width: 100%;
+                height: 100px;
+                object-fit: cover;
+                border-radius: 0px 0px 50% 50%;
+            }
+        }
+    }
+
+    &-item-header2 {
+        .items();
+        margin-left: 2rem;
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: .375rem;
+
+        &-title {
+            .titles();
+        }
+
+        &-sTitle {
+            font-size: 1.4rem;
+            margin-top: .5rem;
+            width: max-content;
+
+            & a {
+                display: flex;
+                gap: .5rem;
+                text-decoration: none;
+                color: inherit;
+                transition: color .5s ease-in-out;
+
+                &:hover {
+                    color: @button-color
+                }
+            }
+
+            & .icon {
+                width: 20px;
+                height: 20px;
+
+                & img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    &-item-mail {
+        .items();
+        padding: 2rem;
+
+        & button {
+            width: 100%;
+            border-radius: 2rem;
+            outline: none;
+            border: 2px solid @button-color;
+            background: @button-color;
+            padding: .5rem;
+            color: inherit;
+            font-size: 1.5rem;
+            transition: all .5s ease-in;
+
+            /*Display*/
+            display: flex;
+            justify-content: center;
+
+            &:hover {
+                border: 2px solid @button-color-hover;
+                background: @button-color-hover;
+                color: @text-hover-button;
+                cursor: pointer
             }
         }
     }
@@ -44,4 +211,14 @@
 .about-container-show {
     .about-container();
     width: min(100%, 48rem);
+}
+
+.point {
+    position: absolute;
+    background: @block2-color;
+    border-radius: 50%;
+}
+
+.items {
+    grid-column: 1 / -1;
 }
