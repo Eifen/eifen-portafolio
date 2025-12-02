@@ -3,10 +3,11 @@
     position: absolute;
     bottom: 6.5rem;
     right: 0rem;
-    width: 0px;
+    width: min(100%, 48rem);
+    opacity: 0;
     height: calc(100vh - 6.5rem);
-    overflow: hidden;
-    transition: width .3s ease-out;
+    overflow: auto;
+    transition: opacity .3s ease-in;
 
     /**Display*/
     display: grid;
@@ -206,11 +207,76 @@
             }
         }
     }
+
+    &-item-body {
+        .items();
+        padding: 0rem 2rem;
+        margin-bottom: 1rem;
+
+        & .item-body {
+            background: @block2-color;
+            padding: 2rem;
+            border-radius: 2rem;
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+
+            &-header {
+                font-size: 1.5rem;
+                font-weight: 700
+            }
+
+            &-content {
+                font-size: 1.3rem;
+            }
+
+            &-tecnologies {
+                font-size: 1.3rem;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+                gap: .375rem;
+
+                &-info {
+                    background: @separation-color;
+                    width: max-content;
+                    padding: 1rem;
+                    border-radius: 2rem;
+                    display: flex;
+                    align-items: center;
+                    gap: .375rem;
+
+                    & img {
+                        width: 30px;
+                        height: 30px;
+                    }
+
+                    & span {
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+
+    &-item-footer {
+        .items();
+        display: flex;
+        gap: .375rem;
+        padding: 1rem;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3rem;
+
+        & img {
+            width: 20px;
+            height: 20px;
+        }
+    }
 }
 
 .about-container-show {
     .about-container();
-    width: min(100%, 48rem);
+    opacity: 1;
 }
 
 .point {

@@ -31,7 +31,7 @@
         <div class="about-container-item-header2">
             <div class="about-container-item-header2-title">Eifen</div>
             <div class="about-container-item-header2-sTitle">
-                <a href="www.linkedin.com/in/eifen" target="_blank">
+                <a href="https://linkedin.com/in/eifen" target="_blank">
                     <div class="icon">
                         <img src="/images/linkedin.svg" alt="linkedin">
                     </div>
@@ -45,9 +45,62 @@
                 Contactame
             </button>
         </div>
-        <div class="about-container-item">d</div>
-        <div class="about-container-item">f</div>
-        <div class="about-container-item">g</div>
+        <div class="about-container-item-body">
+            <div class="item-body">
+                <div class="item-body-header">Sobre mí</div>
+                <div class="item-body-content">
+                    Desarrollador Full Stack con más de 4 años de experiencia en el ciclo de vida completo del
+                    desarrollo de software. Habilidad demostrada en la construcción de sistemas robustos, desde el
+                    frontend hasta
+                    el backend, utilizando un profundo conocimiento de TypeScript, NestJS, Laravel, Python, Vue.js y
+                    MySQL. Busco un rol donde mis habilidades puedan contribuir a la creación de productos
+                    innovadores y de alta calidad.
+                </div>
+            </div>
+        </div>
+        <div class="about-container-item-body">
+            <div class="item-body">
+                <div class="item-body-header">Conocimiento Técnico</div>
+                <div class="item-body-content">
+                    Se presenta un resumen de las tecnologías con las que he trabajado, cuya profundidad se demuestra
+                    en los proyectos detallados en el panel de la izquierda y en esta misma página.
+                </div>
+                <div class="item-body-tecnologies">
+                    <div class="item-body-tecnologies-info">
+                        <img src="/images/laravel.svg" alt="laravel">
+                        <span>Laravel 10: 3+ años</span>
+                    </div>
+                    <div class="item-body-tecnologies-info">
+                        <img src="/images/nestjs.svg" alt="nestjs">
+                        <span>NestJS: 3+ años</span>
+                    </div>
+                    <div class="item-body-tecnologies-info">
+                        <img src="/images/nodejs.svg" alt="nodejs">
+                        <span>NodeJS: 5+ años</span>
+                    </div>
+                    <div class="item-body-tecnologies-info">
+                        <img src="/images/php.svg" alt="php">
+                        <span>PHP Vanilla: 3+ años</span>
+                    </div>
+                    <div class="item-body-tecnologies-info">
+                        <img src="/images/typescript.svg" alt="typescript">
+                        <span>Typescript: 5+ años</span>
+                    </div>
+                    <div class="item-body-tecnologies-info">
+                        <img src="/images/vue.svg" alt="vue">
+                        <span>VueJS: 3+ años</span>
+                    </div>
+                    <div class="item-body-tecnologies-info">
+                        <img src="/images/python.svg" alt="python">
+                        <span>Python: 2+ años</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-container-item-footer">
+            <img src="/images/gmail.svg" alt="gmail">
+            <span>carlosnavased@gmail.com</span>
+        </div>
     </div>
 </template>
 <script setup lang="ts">
@@ -75,11 +128,9 @@ watch(() => props.animate, (newValue) => {
     if (newValue === true && closeAbout.value !== null) {
         closeAbout.value.classList.remove('about-container')
         closeAbout.value.classList.add('about-container-show')
-        closeAbout.value.style.overflow = 'auto'
     } else if (newValue === false && closeAbout.value !== null) {
         closeAbout.value.classList.remove('about-container-show')
         closeAbout.value.classList.add('about-container')
-        closeAbout.value.style.overflow = 'hidden'
     }
 })
 
