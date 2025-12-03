@@ -2,12 +2,12 @@
     background: @block3-color;
     position: absolute;
     bottom: 6.5rem;
-    right: 0rem;
+    right: -999rem;
     width: min(100%, 48rem);
     opacity: 0;
     height: calc(100vh - 6.5rem);
     overflow: auto;
-    transition: opacity .3s ease-in;
+    transition: opacity .3s ease-in, right .3s ease-in-out;
 
     /**Display*/
     display: grid;
@@ -277,6 +277,7 @@
 .about-container-show {
     .about-container();
     opacity: 1;
+    right: 0rem;
 }
 
 .point {

@@ -1,6 +1,6 @@
 <template>
-    <div class="body-container">
-        <RouterView></RouterView>
+    <div>
+        probando
     </div>
 </template>
 <script setup lang="ts">

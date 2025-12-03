@@ -1,0 +1,30 @@
+.layout {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    justify-content: baseline;
+    align-items: start;
+    gap: .375rem;
+    height: 100%;
+
+    &-body {
+        height: inherit;
+        display: grid;
+        grid-template-rows: 1fr;
+    }
+}
+
+
+@media (max-width: 31.25rem) {
+    .layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content 1fr;
+
+        &-body {
+            order: 1;
+        }
+
+        &-aside {
+            order: 0;
+        }
+    }
+}

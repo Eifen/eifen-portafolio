@@ -1,0 +1,122 @@
+.project-body {
+    padding: @padding-container;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr min-content;
+    min-height: 0;
+
+    &-image {
+        width: 100%;
+        height: 100px;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &-link {
+        color: @separation-color;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        font-size: 1rem;
+        margin-top: 1rem;
+
+        & a {
+            color: @separation-color;
+            text-decoration: none;
+            font-weight: 700;
+        }
+    }
+
+    &-content {
+        font-size: 1.2rem;
+        overflow: auto;
+
+        & a {
+            color: @separation-color;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        & .body-assets {
+            background: rgba(12, 9, 16, 0.6);
+            padding: @padding-container;
+            border-radius: .375rem;
+            font-size: 1.2rem;
+            box-shadow: 0.1rem 0.1rem 0.2rem #fff;
+            margin-bottom: 0.5rem;
+            margin-top: 1rem;
+            width: max-content;
+            max-width: 100%;
+
+            & p {
+                word-wrap: break-word;
+            }
+
+            &-title {
+                font-size: 1.5rem;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+.project-aside {
+    // background: green;
+    width: 30vw;
+
+    &-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    &-content {
+        background: rgba(12, 9, 16, 0.6);
+        padding: @padding-container;
+        border-radius: .375rem;
+        font-size: 1.2rem;
+        box-shadow: 0.1rem 0.1rem 0.2rem #fff;
+        margin-bottom: 0.5rem;
+
+        /*Display*/
+        display: flex;
+        flex-direction: column;
+
+        & a {
+            color: @button-color;
+            font-weight: 700;
+        }
+
+        & img {
+            width: 20px;
+            height: 20px;
+            margin-right: .5rem;
+        }
+    }
+
+    &-tecnos {
+        padding: @padding-container;
+        border-radius: .375rem;
+        font-size: 1.2rem;
+        display: flex;
+        flex-direction: column;
+
+        & img {
+            width: 20px;
+            height: 20px;
+            margin-left: .5rem;
+        }
+    }
+}
+
+@media (max-width:31.25rem) {
+    .project-aside {
+        width: inherit;
+    }
+}

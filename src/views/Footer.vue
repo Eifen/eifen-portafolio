@@ -1,7 +1,7 @@
 <template>
     <div class="footer-container">
         <div class="footer-container-item" @mouseover="setBounce(1)" @touchstart="setBounce(1)" @mouseout="setBounce(0)"
-            @touchend="setBounce(0)">
+            @touchend="setBounce(0)" @click="redirect('/dashboard').redirectTo()">
             <div class="footer-container-item-icon">
                 <FontAwesome string-icon="fa-solid fa-business-time" :i-bounce="bounceIs === 1"></FontAwesome>
             </div>
@@ -28,6 +28,7 @@
 import { ref, type Ref } from 'vue';
 import FontAwesome from '../components/FontAwesome.vue';
 import AboutMe from './info/AboutMe.vue';
+import redirect from '../hooks/redirects';
 
 const bounceIs = ref<number>(0)
 const aboutFlag = ref<boolean>(false)
