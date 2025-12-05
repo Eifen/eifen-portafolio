@@ -29,13 +29,13 @@
             </div>
         </div>
         <div class="about-container-item-header2">
-            <div class="about-container-item-header2-title">Eifen</div>
+            <div class="about-container-item-header2-title">Carlos Navas</div>
             <div class="about-container-item-header2-sTitle">
                 <a href="https://linkedin.com/in/eifen" target="_blank">
                     <div class="icon">
                         <img src="/images/linkedin.svg" alt="linkedin">
                     </div>
-                    <div class="info">Carlos Salazar</div>
+                    <div class="info">Enlace a Linkedin</div>
                 </a>
             </div>
         </div>
@@ -68,7 +68,7 @@
                 <div class="item-body-tecnologies">
                     <div class="item-body-tecnologies-info">
                         <img src="/images/laravel.svg" alt="laravel">
-                        <span>Laravel 10: 3+ años</span>
+                        <span>Laravel: 3+ años</span>
                     </div>
                     <div class="item-body-tecnologies-info">
                         <img src="/images/nestjs.svg" alt="nestjs">

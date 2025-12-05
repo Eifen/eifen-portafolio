@@ -26,10 +26,11 @@
                     </p>
                     <a href="/images/carga-horas.png" target="_blank">Imagen Carga de Horas</a>
                     <div class="body-assets">
-                        <div class="body-assets-title">Funcionalidad de cada modulo</div>
-                        <p><b>Auditoria:</b> Visualización de Reportes, Gestión de Métricas (Lectura)</p>
-                        <p><b>Evaluacion:</b> Carga y Gestión de Horas del Personal (Escritura/Input).</p>
-                        <p><b>Api:</b> Lógica de Negocio Central, Orquestación de Datos y Cálculos de Rentabilidad.</p>
+                        <div class="body-assets-title">Funcionalidades</div>
+                        <p><b>Modulo Auditoria:</b> Visualización de Reportes, Gestión de Métricas (Lectura)</p>
+                        <p><b>Modulo Evaluacion:</b> Carga y Gestión de Horas del Personal (Escritura/Input).</p>
+                        <p><b>Modulo Api:</b> Lógica de Negocio Central, Orquestación de Datos y Cálculos de
+                            Rentabilidad.</p>
                     </div>
                 </div>
                 <div class="project-body-link">
@@ -41,7 +42,7 @@
         <template #aside>
             <div class="project-aside">
                 <div class="project-aside-content">
-                    <span class="project-aside-title">Información del proyecto</span>
+                    <span class="project-aside-title">Proyecto</span>
                     <span>
                         <FontAwesome string-icon="fa-solid fa-upload"></FontAwesome>
                         <b>Fecha de publicación:</b> 13/02/2023
@@ -61,7 +62,7 @@
                     </span>
                 </div>
                 <div class="project-aside-tecnos">
-                    <span class="project-aside-title">Tecnologías utilizadas</span>
+                    <span class="project-aside-title">Tecnologías</span>
                     <span>
                         <b>API:</b>
                         <img src="/images/nestjs.svg" alt="nestjs"></img>
