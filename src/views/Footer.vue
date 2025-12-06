@@ -21,7 +21,7 @@
             </div>
             <div class="footer-container-item-title">About me</div>
         </div>
-        <AboutMe :animate="aboutFlag"></AboutMe>
+        <AboutMe :animate="aboutFlag" @open-modal="$emit('openModal')"></AboutMe>
     </div>
 </template>
 <script setup lang="ts">
@@ -37,7 +37,8 @@ const setBounce = (type: number) => { bounceIs.value = type }
 const animateAbout = () => { aboutFlag.value = !aboutFlag.value }
 
 defineEmits<{
-    ref: [value: Ref<HTMLDivElement | null>]
+    ref: [value: Ref<HTMLDivElement | null>],
+    openModal: []
 }>()
 
 //Handles

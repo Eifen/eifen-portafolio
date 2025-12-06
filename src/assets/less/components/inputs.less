@@ -1,0 +1,65 @@
+.borderInput {
+    border: 1px solid @Border-Color;
+}
+
+.input-container-error {
+    color: @Failure-Submit-Color;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+    font-size: 1.2rem;
+
+    & textarea {
+        resize: vertical
+    }
+
+    &-input {
+        .borderInput();
+        .transitionFocus();
+        background: @Input-Color;
+        width: 100%;
+        outline: none;
+        background-clip: padding-box;
+        padding: .375rem .75rem;
+        font-size: 1em;
+        font-weight: 400;
+        font-family: inherit;
+
+        &:focus {
+            .focusInput()
+        }
+    }
+
+    &-icon {
+        .borderInput();
+        background: @Background-Input-Color;
+        line-height: 1.6;
+        padding: .375rem .75rem;
+        display: flex;
+        align-items: center;
+        color: @Input-icon-color;
+    }
+
+    #icon1 {
+        border-radius: .375rem 0px 0px .375rem;
+        border-right: none;
+    }
+
+    #icon2 {
+        border-radius: 0px .375rem .375rem 0px;
+        border-left: none;
+        cursor: pointer;
+    }
+
+    .input-border {
+        border-radius: 0px .375rem .375rem 0px;
+    }
+
+    .no-icon {
+        border-radius: .375rem;
+    }
+}

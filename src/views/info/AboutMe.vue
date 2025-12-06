@@ -22,25 +22,25 @@
                     <div class="item-header-info-message">
                         <div class="item-header-info-message-pointUp"></div>
                         <div class="item-header-info-message-pointDown"></div>
-                        <div class="item-header-info-message-text">Software Engineering. 5+ Years
+                        <div class="item-header-info-message-text">Software Engineering. 4+ Years
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="about-container-item-header2">
-            <div class="about-container-item-header2-title">Eifen</div>
+            <div class="about-container-item-header2-title">Carlos Navas</div>
             <div class="about-container-item-header2-sTitle">
                 <a href="https://linkedin.com/in/eifen" target="_blank">
                     <div class="icon">
                         <img src="/images/linkedin.svg" alt="linkedin">
                     </div>
-                    <div class="info">Carlos Salazar</div>
+                    <div class="info">Enlace a Linkedin</div>
                 </a>
             </div>
         </div>
         <div class="about-container-item-mail">
-            <button type="button" @click="corregir()">
+            <button type="button" @click="$emit('openModal')">
                 <FontAwesome string-icon="fa-solid fa-message"></FontAwesome>
                 Contactame
             </button>
@@ -68,7 +68,7 @@
                 <div class="item-body-tecnologies">
                     <div class="item-body-tecnologies-info">
                         <img src="/images/laravel.svg" alt="laravel">
-                        <span>Laravel 10: 3+ años</span>
+                        <span>Laravel: 3+ años</span>
                     </div>
                     <div class="item-body-tecnologies-info">
                         <img src="/images/nestjs.svg" alt="nestjs">
@@ -76,7 +76,7 @@
                     </div>
                     <div class="item-body-tecnologies-info">
                         <img src="/images/nodejs.svg" alt="nodejs">
-                        <span>NodeJS: 5+ años</span>
+                        <span>NodeJS: 4+ años</span>
                     </div>
                     <div class="item-body-tecnologies-info">
                         <img src="/images/php.svg" alt="php">
@@ -84,7 +84,7 @@
                     </div>
                     <div class="item-body-tecnologies-info">
                         <img src="/images/typescript.svg" alt="typescript">
-                        <span>Typescript: 5+ años</span>
+                        <span>Typescript: 4+ años</span>
                     </div>
                     <div class="item-body-tecnologies-info">
                         <img src="/images/vue.svg" alt="vue">
@@ -114,6 +114,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
     closeAbout: []
+    openModal: []
 }>()
 
 const closeAbout = ref<HTMLDivElement | null>(null)
@@ -138,7 +139,4 @@ watch(direction, (newDir) => {
     if (newDir === 'right') emit('closeAbout')
 })
 
-function corregir() {
-    alert('Recuerda hacer el modal de contacto')
-}
 </script>
