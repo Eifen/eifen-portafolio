@@ -4,11 +4,11 @@ Este es el repositorio del portafolio profesional de **Carlos Navas**. Una plata
 
 ---
 
-## 🛠️ Stack Tecnológico
+## Stack Tecnológico
 
 Este proyecto está construido como una aplicación *Full Stack* dividida en dos módulos (Frontend y Backend), interconectados por peticiones HTTP.
 
-### 🌐 Frontend (Cliente)
+### Frontend (Cliente)
 
 | Tecnología | Propósito |
 | :--- | :--- |
@@ -17,7 +17,7 @@ Este proyecto está construido como una aplicación *Full Stack* dividida en dos
 | **TypeScript** | Para tipado estático y mejor escalabilidad. |
 | **Less** | Estilizado y manejo de diseño responsivo. |
 
-### ⚙️ Backend (Servidor)
+### Backend (Servidor)
 
 | Tecnología | Propósito |
 | :--- | :--- |
