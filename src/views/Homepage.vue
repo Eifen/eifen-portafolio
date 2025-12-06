@@ -99,7 +99,7 @@ const toAxios = () => mailPrepare({
 async function axiosSend(payload: ISendMail) {
     try {
         isPresss.value = true
-        const response = await axios.post(`${import.meta.env['HOST']}:${import.meta.env['PORT']}/send-mail`, payload)
+        const response = await axios.post(`/send-mail`, payload)
         isPresss.value = false
         messageButton.value = response.data
         setTimeout(() => {

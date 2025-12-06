@@ -23,14 +23,8 @@ const port = parseInt(process.env['PORT'] as string) || 3000
 
 routerServer(server)
 
-if (process.env.NODE_ENV === 'production') {
-    server.listen(port, '0.0.0.0', () => {
-        console.log(`Server is listening on ${process.env['HOST']}:${port}...`)
-    })
-} else {
-    ViteExpress.listen(server, port, () => {
-        console.log(`Server is listening on ${process.env['HOST']}:${port}...`)
-    })
-}
+ViteExpress.listen(server, port, () => {
+    console.log(`Server is listening on ${process.env['HOST']}:${port}...`)
+})
 
 export default server
