@@ -77,6 +77,7 @@ import mailPrepare from '../hooks/contact/mailPrepare';
 import type ISendMail from '../interfaces/nodemailer/sendMail.interface';
 import axios from 'axios';
 import { watch } from 'vue';
+import { server } from '../common/server';
 
 //Hooks
 const { activeModal, controlModal } = modalControl()
@@ -98,8 +99,9 @@ const toAxios = () => mailPrepare({
 
 async function axiosSend(payload: ISendMail) {
     try {
+        console.log(server)
         isPresss.value = true
-        const response = await axios.post(`/send-mail`, payload)
+        const response = await axios.post(server, payload)
         isPresss.value = false
         messageButton.value = response.data
         setTimeout(() => {
