@@ -12,17 +12,17 @@ export default class NodemailerController {
     /** Propiedad de configuracion general */
     private static transporter = nodemailer.createTransport({
         service: process.env['MAIL_SERVICE'],
-        host: process.env['MAIL_HOST'],
-        port: Number(process.env['MAIL_PORT']),
-        secure: false,
+        // host: process.env['MAIL_HOST'],
+        // port: Number(process.env['MAIL_PORT']),
+        // secure: false,
         auth: {
             user: process.env['MAIL_USERNAME'],
             pass: process.env['MAIL_PASSWORD']
         },
-        tls: {
-            servername: process.env['MAIL_HOST']
-        },
-        requireTLS: process.env['MAIL_ENCRYPTION'] === 'tls'
+        // tls: {
+        //     servername: process.env['MAIL_HOST']
+        // },
+        // requireTLS: process.env['MAIL_ENCRYPTION'] === 'tls'
     })
 
     /**
