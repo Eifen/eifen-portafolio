@@ -82,7 +82,7 @@ const toWsp = () => mailPrepare({
 
 function wspConnect(payload: string) {
     isPresss.value = true
-    aMessage.value = `http://wa.me/${phone}?text=${payload}`
+    aMessage.value = `https://wa.me/${phone}?text=${payload}`
     messageButton.value = "Se abrirá una pestaña en breves"
     setTimeout(() => {
         activeModal();
