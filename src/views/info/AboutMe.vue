@@ -14,6 +14,9 @@
                     <div class="item-header-icons-icon">
                         <a href="https://nestjs.com/" target="_blank"><img src="/images/nestjs.svg" alt="nestjs"></a>
                     </div>
+                    <div class="item-header-icons-icon" @click="emit('closeAbout')">
+                        <img src="/images/close.svg" alt="close">
+                    </div>
                 </div>
                 <div class="item-header-info">
                     <div class="item-header-info-avatar" ref="avatar-grow">

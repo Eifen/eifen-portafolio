@@ -21,7 +21,7 @@
             </div>
             <div class="footer-container-item-title">About me</div>
         </div>
-        <AboutMe :animate="aboutFlag" @open-modal="$emit('openModal')"></AboutMe>
+        <AboutMe :animate="aboutFlag" @open-modal="$emit('openModal')" @close-about="animateAbout()"></AboutMe>
     </div>
 </template>
 <script setup lang="ts">
