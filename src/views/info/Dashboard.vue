@@ -35,7 +35,7 @@
                     <li><b>¿Qué patrones de diseños sueles aplicar?:</b> Model | View | Controller y Factory.</li>
                     <li><b>¿Sigues el estandar SOLID?:</b> Si, se busca que todos los proyectos mantengan el mismo
                         esquema siguiendo dichas directrices.</li>
-                    <li><b>¿Cómo es el proceso para contactarte?:</b> Envíame primero un correo a través de la sección
+                    <li><b>¿Cómo es el proceso para contactarte?:</b> Inicia contacto a través de la sección
                         About Me, y luego agenda una cita conmigo a través del boton que aquí se presenta</li>
                 </ul>
             </div>
