@@ -25,14 +25,12 @@ Este proyecto está construido como una aplicación *Full Stack* dividida en dos
 | **Nodemailer** | Gestión segura del envío de correos electrónicos desde el formulario de contacto. |
 | **TypeScript** | Lenguaje principal de desarrollo del servidor. |
 | **dotenv** | Gestión de variables de entorno para credenciales seguras. |
-| **Axios** | Para gestionas las peticiones HTTP al servidor |
 
 ---
 
 ## Aspectos de Seguridad y Calidad
 
 * **Sanitización de Contenido (XSS):** El servidor implementa saneamiento en todos los *inputs* del formulario de contacto para limpiar y eliminar código malicioso, previniendo ataques **Cross-Site Scripting (XSS)** dirigidos al buzón del propietario.
-* **Gestión de Credenciales:** Las credenciales de Nodemailer se manejan exclusivamente a través de variables de entorno.
 * **Validación de Datos:** Uso de validadores de expresiones regulares robustos para asegurar la integridad de los datos de entrada.
 
 ---

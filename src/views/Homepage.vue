@@ -32,28 +32,17 @@
                     <span v-if="!emailCondition(email) && email.length > 0">{{ ErrorMessage.EMAIL }}</span>
                 </template>
             </Inputs>
-            <div class="labels">Mensaje a enviar</div>
-            <TextAreas first-icon="fa-solid fa-message" placeholder-string="Ingrese su mensaje de contacto" :rows="5"
-                v-model="message" @get-value="">
-                <template #input-error>
-                    <span v-if="!stringCondition(message) && message.length > 0">{{ ErrorMessage.LENGTH }} 1000.
-                        Longitud Actual: {{
-                            message.length }}</span>
-                </template>
-            </TextAreas>
-            <button v-if="trueCondition()" type="button" class="button" @click="axiosSend(toAxios())"
+            <button v-if="trueCondition()" type="button" class="button" @click="wspConnect(toWsp())"
                 :disabled="isPresss">
                 <template v-if="!isPresss">
                     <FontAwesome string-icon="fa-solid fa-mail-reply"></FontAwesome>
-                    Enviar mensaje
+                    Iniciar contacto
                 </template>
                 <template v-else>
                     <FontAwesome string-icon="fa-solid fa-spinner" i-spin></FontAwesome>
-                    Enviando correo...
+                    {{ messageButton }}
                 </template>
             </button>
-            <div v-if="messageButton.length > 0" class="success-button">{{ messageButton }}</div>
-            <div v-else-if="errorButton.length > 0" class="error-button">{{ errorButton }}</div>
         </template>
     </Modals>
 </template>
@@ -65,7 +54,6 @@ import Footer from './Footer.vue';
 import Aside from './Aside.vue';
 import Modals from '../components/Modals.vue';
 import Inputs from '../components/Inputs.vue';
-import TextAreas from '../components/TextAreas.vue';
 import FontAwesome from '../components/FontAwesome.vue';
 import modalControl from '../hooks/modal/modalControl';
 import paramsValidate from '../hooks/contact/paramsValidate';
@@ -74,47 +62,44 @@ import stringValidate from '../hooks/contact/stringValidate';
 import { ErrorMessage } from '../enum/errorMessage.enum';
 import buttonConfig from '../hooks/buttonConfig';
 import mailPrepare from '../hooks/contact/mailPrepare';
-import type ISendMail from '../interfaces/nodemailer/sendMail.interface';
-import axios from 'axios';
 import { watch } from 'vue';
-import { server } from '../common/server';
 
 //Hooks
 const { activeModal, controlModal } = modalControl()
 const { email, message, name } = paramsValidate()
-const { isPresss, messageButton, errorButton } = buttonConfig()
+const { isPresss, messageButton, aMessage, phone } = buttonConfig()
 
 //Conditions
 const emailCondition = (value: string) => emailValidate(value)
-const stringCondition = (value: string) => stringValidate(value, 1000)
 const nameCondition = (value: string) => stringValidate(value, 50)
-const trueCondition = () => emailCondition(email.value) && stringCondition(message.value) && nameCondition(name.value)
+const trueCondition = () => emailCondition(email.value) && nameCondition(name.value)
 
 //Handles
-const toAxios = () => mailPrepare({
+const toWsp = () => mailPrepare({
     email: email.value,
     name: name.value,
-    message: message.value
 })
 
-async function axiosSend(payload: ISendMail) {
-    try {
-        console.log(server)
-        isPresss.value = true
-        const response = await axios.post(server, payload)
-        isPresss.value = false
-        messageButton.value = response.data
-        setTimeout(() => {
-            activeModal();
-        }, 1000);
-    } catch (error) {
-        errorButton.value = 'Ha ocurrido un error, intente más tarde...'
-        isPresss.value = false
-        console.error(error)
-        setTimeout(() => {
-            activeModal();
-        }, 1000);
-    }
+function wspConnect(payload: string) {
+    isPresss.value = true
+    aMessage.value = `http://wa.me/${phone}?text=${payload}`
+    messageButton.value = "Se abrirá una pestaña en breves"
+    setTimeout(() => {
+        activeModal();
+        isPresss.value = false;
+        goWs()
+    }, 2000);
+}
+
+function goWs() {
+    const a = document.createElement('a')
+    a.href = aMessage.value
+    a.target = '_blank'
+    a.style.display = 'none'
+    //Creamos y borramos
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
 }
 
 function eraser() {
@@ -122,7 +107,7 @@ function eraser() {
     name.value = ''
     message.value = ''
     messageButton.value = ''
-    errorButton.value = ''
+    aMessage.value = ''
 }
 
 //Watch

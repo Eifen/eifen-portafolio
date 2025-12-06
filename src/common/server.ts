@@ -1,1 +1,0 @@
-export const server = `${import.meta.env['VITE_SCHEMA']}://${import.meta.env['VITE_HOST']}:${import.meta.env['VITE_PORT']}/send-mail`
