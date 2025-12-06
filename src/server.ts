@@ -14,12 +14,12 @@ server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
 
 server.use(cors({
-    origin: `${process.env['VITE_HOST']}:${process.env['VITE_PORT']}`,
+    origin: process.env['HOST'] || '0.0.0.0',
     credentials: true
 }))
 
 //Rutas
-const port = parseInt(process.env['VITE_PORT'] as string)
+const port = parseInt(process.env['PORT'] as string) || 3000
 
 routerServer(server)
 
