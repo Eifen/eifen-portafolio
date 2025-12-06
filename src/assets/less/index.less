@@ -11,6 +11,16 @@
 @button-color: #087CA7;
 @button-color-hover: #f7f0f0;
 @text-hover-button: #38040E;
+@cards-background: #f7f0f0;
+@cards-color: rgba(12, 9, 16, 1);
+@Background-Modal-Color: rgba(255, 255, 255, 0.4);
+@Border-Color: #ced4da;
+@Input-Focus-Color: #087CA7;
+@Input-Color: #f7f0f0;
+@Background-Input-Color: #f7f0f0;
+@Input-icon-color: rgba(12, 9, 16, 1);
+@Failure-Submit-Color: #e3342f;
+@Sucess-Submit-Color: #38c172;
 
 html {
     font-size: 62.5%;
@@ -37,6 +47,70 @@ body {
     font-weight: 700
 }
 
+.transitionFocus {
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.focusInput {
+    border: 1px solid @button-color;
+    box-shadow: 0 0 0 .25rem @Input-Focus-Color;
+    z-index: 1
+}
+
+.button {
+    font-family: @font-family-t;
+    width: 100%;
+    border-radius: 2rem;
+    outline: none;
+    border: 2px solid @button-color;
+    background: @button-color;
+    padding: .5rem;
+    color: inherit;
+    font-size: 1.5rem;
+    transition: all .5s ease-in;
+
+    /*Display*/
+    display: flex;
+    justify-content: center;
+
+    &:hover {
+        border: 2px solid @button-color-hover;
+        background: @button-color-hover;
+        color: @text-hover-button;
+        cursor: pointer
+    }
+
+    &:disabled {
+        background: @block2-color;
+        border-color: @block2-color;
+        cursor: not-allowed;
+    }
+
+    &:disabled:hover {
+        color: inherit;
+    }
+}
+
+.labels {
+    .titles();
+    font-size: min(2vmax, 2.5rem);
+    margin-bottom: .375rem
+}
+
+.success-button {
+    width: 100%;
+    color: @Sucess-Submit-Color;
+    font-weight: 700;
+    font-size: 1.2rem
+}
+
+.error-button {
+    width: 100%;
+    color: @Failure-Submit-Color;
+    font-weight: 700;
+    font-size: 1.2rem
+}
+
 
 
 /*IMPORTS*/
@@ -46,6 +120,9 @@ body {
 @import './body.less';
 @import './footer.less';
 @import './info/aboutme.less';
-@import './layout.less';
+@import './components/layout.less';
 @import './projects/projects.less';
 @import './info/services.less';
+@import './components/cards.less';
+@import './components/modals.less';
+@import './components/inputs.less';

@@ -77,7 +77,21 @@
 
     &-body {
         grid-area: body;
-        background: wheat;
+        height: 100%;
+        overflow: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 25rem), 1fr));
+        justify-items: center;
+        align-items: start;
+        grid-template-rows: min-content;
+        gap: 1rem;
+
+        &-title {
+            grid-column: 1 / -1;
+            .titles();
+            padding: @padding-container;
+        }
+
     }
 
     &-footer {
@@ -109,8 +123,12 @@
         grid-template-areas: "aside"
             "body"
             "footer";
-        grid-template-rows: min-content 1fr min-content;
+        grid-template-rows: 1fr 1fr min-content;
         grid-template-columns: 1fr;
+        gap: 1rem;
 
+        &-aside {
+            border-bottom: solid 2px @separation-color;
+        }
     }
 }

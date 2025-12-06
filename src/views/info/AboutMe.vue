@@ -22,7 +22,7 @@
                     <div class="item-header-info-message">
                         <div class="item-header-info-message-pointUp"></div>
                         <div class="item-header-info-message-pointDown"></div>
-                        <div class="item-header-info-message-text">Software Engineering. 5+ Years
+                        <div class="item-header-info-message-text">Software Engineering. 4+ Years
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="about-container-item-mail">
-            <button type="button" @click="corregir()">
+            <button type="button" @click="$emit('openModal')">
                 <FontAwesome string-icon="fa-solid fa-message"></FontAwesome>
                 Contactame
             </button>
@@ -76,7 +76,7 @@
                     </div>
                     <div class="item-body-tecnologies-info">
                         <img src="/images/nodejs.svg" alt="nodejs">
-                        <span>NodeJS: 5+ años</span>
+                        <span>NodeJS: 4+ años</span>
                     </div>
                     <div class="item-body-tecnologies-info">
                         <img src="/images/php.svg" alt="php">
@@ -84,7 +84,7 @@
                     </div>
                     <div class="item-body-tecnologies-info">
                         <img src="/images/typescript.svg" alt="typescript">
-                        <span>Typescript: 5+ años</span>
+                        <span>Typescript: 4+ años</span>
                     </div>
                     <div class="item-body-tecnologies-info">
                         <img src="/images/vue.svg" alt="vue">
@@ -114,6 +114,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
     closeAbout: []
+    openModal: []
 }>()
 
 const closeAbout = ref<HTMLDivElement | null>(null)
@@ -138,7 +139,4 @@ watch(direction, (newDir) => {
     if (newDir === 'right') emit('closeAbout')
 })
 
-function corregir() {
-    alert('Recuerda hacer el modal de contacto')
-}
 </script>

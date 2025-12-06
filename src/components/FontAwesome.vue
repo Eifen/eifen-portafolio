@@ -6,7 +6,7 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faAddressCard, faBarsProgress, faBusinessTime, faCalendar, faCheck, faClock, faFile, faLink, faMailForward, faMessage, faUpload, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faAddressCard, faBarsProgress, faBusinessTime, faCalendar, faCheck, faClock, faFile, faLink, faMailForward, faMailReply, faMessage, faSpinner, faUpload, faUser } from '@fortawesome/free-solid-svg-icons';
 
 library.add([
     faUser,
@@ -20,7 +20,9 @@ library.add([
     faBarsProgress,
     faLink,
     faCheck,
-    faCalendar
+    faCalendar,
+    faMailReply,
+    faSpinner
 ])
 
 
