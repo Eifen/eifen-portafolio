@@ -24,7 +24,16 @@
                 <span>CARENT</span>
             </div>
         </div>
-        <!-- PROXIMOS PROYECTOS -->
+        <!-- VENDING MACHINE -->
+        <div class="aside-container-items">
+            <div class="aside-container-items-icon" @click="redirect('/vending').redirectTo()">
+                <img src="/favicon.ico" alt="favicon">
+            </div>
+            <div class="aside-container-items-text" @click="redirect('/vending').redirectTo()">
+                <span>Proyectos</span>
+                <span>Personales</span>
+            </div>
+        </div>
     </div>
 </template>
 <script setup lang="ts">

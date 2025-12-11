@@ -2,6 +2,7 @@ import { createMemoryHistory, createRouter } from 'vue-router'
 import Homepage from '../views/Homepage.vue'
 import Dashboard from '../views/info/Dashboard.vue'
 import Carent from '../views/projects/Carent.vue'
+import Vending from '../views/projects/Vending.vue'
 
 const routes = [
     {
@@ -19,6 +20,10 @@ const routes = [
             {
                 path: '/carent',
                 component: Carent
+            },
+            {
+                path: '/vending',
+                component: Vending
             }
         ]
     },
